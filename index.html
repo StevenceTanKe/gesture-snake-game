@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     <style>
         body {
@@ -29,6 +29,7 @@
         #videoCanvas {
             border: 2px solid #333;
             background-color: #000;
+            transform: scaleX(-1);  /* Mirror the video container */
         }
         #score {
             font-size: 24px;
@@ -39,7 +40,7 @@
 <body>
     <div id="score">Score: 0</div>
     <div class="game-container">
-        <canvas id="gameCanvas" width="500" height="400"></canvas>
+        <canvas id="gameCanvas" width="600" height="600"></canvas>
         <div id="videoCanvas"></div>
     </div>
     <script src="game.js"></script>
