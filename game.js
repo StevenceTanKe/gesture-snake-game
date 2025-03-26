@@ -176,15 +176,6 @@ function drawGame() {
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Check game over
-    if (isGameOver()) {
-        clearInterval(gameLoop);
-        ctx.fillStyle = 'black';
-        ctx.font = '30px Arial';
-        ctx.fillText('Game Over!', canvas.width/4, canvas.height/2);
-        return;
-    }
-
     // Draw snake
     ctx.fillStyle = 'green';
     snake.forEach(segment => {
@@ -219,15 +210,27 @@ function generateFood() {
     food = newFood;
 }
 
-function isGameOver() {
-    // Only check for self collision
-    for (let i = 1; i < snake.length; i++) {
-        if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
-            return true;
-        }
+// Initialize the game
+function initGame() {
+    // Reset game state
+    snake = [{ x: 10, y: 10 }];
+    dx = 0;
+    dy = 0;
+    score = 0;
+    gameSpeed = 150;
+    scoreElement.textContent = `Score: ${score}`;
+    
+    // Generate initial food
+    generateFood();
+    
+    // Clear any existing game loop
+    if (gameLoop) {
+        clearInterval(gameLoop);
     }
-    return false;
+    
+    // Start the game loop
+    gameLoop = setInterval(drawGame, gameSpeed);
 }
 
 // Start game
-gameLoop = setInterval(drawGame, gameSpeed); 
+initGame(); 
