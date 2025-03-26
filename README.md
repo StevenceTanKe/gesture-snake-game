@@ -1,15 +1,7 @@
 # Gesture-Controlled Snake Game
 
-A classic Snake game controlled by hand gestures using webcam and machine learning. Built with HTML5 Canvas, JavaScript, and ML5.js for pose detection.
+A classic Snake game controlled by hand gestures using webcam and machine learning.
 
-## Features
-
-- Classic Snake gameplay with a modern twist
-- Hand gesture controls using webcam
-- Real-time pose detection and skeleton visualization
-- Score tracking
-- Increasing difficulty as you collect food
-- Wall wrapping (snake can pass through walls)
 
 ## How to Play
 
@@ -25,19 +17,10 @@ A classic Snake game controlled by hand gestures using webcam and machine learni
 6. Avoid hitting the snake's own body
 7. Try to achieve the highest score possible!
 
-## Technical Details
-
-- Built with vanilla JavaScript
-- Uses HTML5 Canvas for game rendering
-- ML5.js for pose detection
-- P5.js for video handling
-- No external dependencies required
-
 ## Requirements
 
 - Modern web browser with camera support
-- Webcam
-- JavaScript enabled
+- JavaScript
 
 ## Installation
 
